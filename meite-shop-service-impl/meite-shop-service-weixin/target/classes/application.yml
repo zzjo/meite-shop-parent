@@ -1,0 +1,59 @@
+#spring:
+#  #  application:
+#  #    name: app-mayikt-weixin
+#  redis:
+#    host: 192.168.212.174
+#    port: 6379
+#    pool:
+#    jedis:
+#      pool:
+#        max-idle: 100
+#        min-idle: 1
+#        max-active: 1000
+#        max-wait: -1
+#logging:
+#  level:
+#    org.springframework.web: INFO
+#    com.github.binarywang.demo.wx.mp: DEBUG
+#    me.chanjar.weixin: DEBUG
+#wx:
+#  mp:
+#    configs:
+#      - appId: wx8855abd308d92f5e #（一个公众号的appid）
+#        secret: 871d15282a2ae13676f48e1e04b18ba2 #（公众号的appsecret）
+#        token: zzjo #（接口配置里的Token值）
+#mayikt:
+#  weixin:
+#    registration:
+#      code:
+#        ###微信注册码消息
+#        message:  您的注册码为:%s，请关注<a href="https://ke.qq.com/course/273548">腾讯课堂免费公开课</a>，欢迎观看97后架构师余老师的精品课程讲解。官方QQ群：<a href='https://jq.qq.com/?_wv=1027&k=5TVfAMF'>193086273</a>，期待你的加入，感谢！
+#    ###默认提示消息
+#    default:
+#      registration:
+#        code:
+#          message: 您的消息，我们已经收到,会及时回复给您的!
+###数据库相关连接
+#datasource:
+#  username: root
+#  password: 123456
+#  driver-class-name: com.mysql.jdbc.Driver
+#  url: jdbc:mysql://127.0.0.1:3306/meite_member?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+# MyBatis-Plus
+#mybatis-plus:
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
+#  mapper-locations: classpath*:mybatis/**/*Mapper.xml
+  # 搜索指定包别名
+#  type-aliases-package: com.jingdu.boot.project.**.domain
+  # 加载全局的配置文件
+#  config-location: classpath:mybatis/mybatis-config.xml
+#  global-config:
+#    banner: false
+#    db-config:
+#      #逻辑删除配置
+#      logic-delete-value: 1
+#      logic-not-delete-value: 0
+#      #驼峰下划线转换
+#      table-underline: true
+      #表前缀
+#      table-prefix: _
