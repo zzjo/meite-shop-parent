@@ -57,4 +57,7 @@ mybatis-plus:
       #驼峰下划线转换
       table-underline: true
 #表前缀
+logging:
+  level:
+    com.lz.member.mapper: debug
 #      table-prefix: _

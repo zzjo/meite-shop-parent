@@ -2,7 +2,7 @@ package com.lz.weixin.mp.handler;
 
 import com.lz.base.BaseResponse;
 import com.lz.constants.Constants;
-import com.lz.member.entity.UserEntity;
+import com.lz.member.output.dto.UserOutDTO;
 import com.lz.utils.GeneratorUtil;
 import com.lz.utils.RedisUtil;
 import com.lz.utils.RegexUtils;
@@ -14,7 +14,6 @@ import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
-import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -71,7 +70,7 @@ public class MsgHandler extends AbstractHandler {
         log.info("fromContent:" + fromContent);
         if (RegexUtils.checkMobile(fromContent)) {
             //根据手机号码调用会员服务接口查询用户信息是否存在
-            BaseResponse<UserEntity> resultUserInfo = memberServiceFeign.existMobile(fromContent);
+            BaseResponse<UserOutDTO> resultUserInfo = memberServiceFeign.existMobile(fromContent);
             if (Constants.HTTP_RES_CODE_200.equals(resultUserInfo.getCode())) {
                 return new TextBuilder().build("该手机号码" + fromContent + "已经存在", wxMessage, weixinService);
             }
